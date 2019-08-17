@@ -2,18 +2,23 @@
     
         pip install -r requirements.txt
 
-2. **process corpus, form xml to text**
+2. **download data**
 
-        python process_wiki.py ./data/zhwiki-latest-pages-articles.xml.bz2 ./data/wiki.zh.text
+        . download raw data from this link:https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
+        . create data file at project root
+        . put raw data to data file
+             
+3. **process corpus, form xml to text**
 
-3. **process corpus, form tranditional to simplified**
+        python process_wiki.py ./data/enwiki-latest-pages-articles ./data/wiki.zh.text
+4. **process corpus, form tranditional to simplified**
 
         opencc -i ./data/wiki.zh.text -o ./data/wiki.zh.jian.text -c t2s.json
         
-4. **process corpus, sub En and segmentation zh.jian**
+5. **process corpus, sub En and segmentation zh.jian**
 
         python word_segmentation.py
         
-5. **train**
+6. **train**
 
         python train.py ./data/train.txt ./model/wiki_zh_word2vec.model ./model/wiki_zh_vectors.txt
