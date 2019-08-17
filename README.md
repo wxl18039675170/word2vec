@@ -4,13 +4,13 @@
 
 2. **download data**
 
-        . download raw data from this link:https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
+        . download raw data from this link:https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-pages-articles.xml.bz2
         . create data file at project root
         . put raw data to data file
              
 3. **process corpus, form xml to text**
 
-        python process_wiki.py ./data/enwiki-latest-pages-articles ./data/wiki.zh.text
+        python process_wiki.py ./data/zhwiki-latest-pages-articles.xml.bz2 ./data/wiki.zh.text
 4. **process corpus, form tranditional to simplified**
 
         opencc -i ./data/wiki.zh.text -o ./data/wiki.zh.jian.text -c t2s.json
