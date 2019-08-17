@@ -16,4 +16,4 @@
         
 5. **train**
 
-        python train.py
+        python train.py ./data/train.txt ./model/wiki_zh_word2vec.model ./model/wiki_zh_vectors.txt
